@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Miku & Me</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='gui.css') }}">
+
+  <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.x/dist/pixi.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/gh/RaSan147/pixi-live2d-display@v0.5.0-ls-7/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/RaSan147/pixi-live2d-display@v0.5.0-ls-7/dist/cubism2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/RaSan147/pixi-live2d-display@v0.5.0-ls-7/dist/cubism4.min.js"></script>
+</head>
+
+<body>
+  <div id="canvas_container"><canvas id=canvas></canvas></div>
+    <div class="chat">
+      <div class="messages">
+        <ul class="message-list">
+        </ul>
+        <div class="message-input">
+          <input type="text" placeholder="Silakan ketik sesuatu..." />
+          <label for="fileInput" class="custom-file-input"></label>
+          <input type="file" id="fileInput" accept="image/*" onchange="uploadImage()" />
+          <button id="voiceBtn" type="button" class="btn">Mic</button>
+          <button type="button" class="btn" onclick="sendMessage()">Send</button>
+          <div id="calendar">
+            <span id="current-date"></span> - <span id="current-time"></span>
+          </div>
+        </div>
+      </div>
+      <div id="transcriptDisplay" class="transcript-display"></div>
+    </div>
+    <script src="{{ url_for('static', filename='anim.js') }}"></script>
+</body>
+</html>
