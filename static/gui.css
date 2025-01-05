@@ -1,0 +1,262 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+}
+
+body {
+  background-color: #1e1e1e;
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: row; 
+}
+
+#live2d-container {
+  width: 100%; 
+  background-color: #1e1e1e; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#canvas_container {
+  width: 70%;
+  height: 100%;
+}
+
+#canvas {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(1.4) translateY(-10%);
+}
+
+.chat {
+  width: 150%; 
+  height: 100%;
+  background-color: #2c2c2c;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+.message-list {
+  padding: 10px;
+  overflow-y: auto;
+  height: 80%;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #2c2c2c;
+}
+
+.message-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.message-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.message-input {
+  display: flex;
+  padding: 20px 0;
+  border-top: 1px solid #3b3b3b;
+}
+
+.message-input input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 0.5rem;
+  border: 1px solid #3b3b3b;
+  background: #242424;
+  font-size: 16px;
+  color: #e0e0e0;
+}
+
+.message-input input:focus {
+  outline: none;
+  background-color: #1e1e1e;
+}
+
+.message-input button {
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background: #4a9eff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.message-input button:hover {
+  background-color: #3078d3;
+}
+
+.message-item {
+  padding: 12px;
+  border-radius: 0.75rem;
+  margin: 12px 0;
+}
+
+.message-item span {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px;
+  border-radius: 5px;
+  margin-left: -3px;
+  cursor: pointer;
+}
+
+.message-item:last-child {
+  margin-bottom: 0;
+}
+
+.transcript-display {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #e0e0e0; 
+  background-color: #2c2c2c; 
+  padding: 10px;
+  border-radius: 0.5rem;
+  border: 1px solid #3b3b3b; 
+}
+
+#calendar {
+  position: fixed; 
+  bottom: 0px; 
+  right: 0; 
+  background-color: #2c2c2c; 
+  color: #fff; 
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#voiceBtn {
+  background-color: #4a9eff; 
+  color: white;
+}
+
+#voiceBtn:hover {
+  background-color: #3078d3; 
+}
+
+.item-primary {
+  background-color: #494646;
+  color: #f3f3f3;
+}
+
+.item-primary span{
+  background-color: #494646;
+  filter: brightness(1.2);
+}
+
+.item-secondary {
+  background-color: #3078d3;
+  color: #f3f3f3;
+}
+
+.item-secondary span{
+  background-color: #3078d3;
+  filter: brightness(1.2);
+}
+
+#fileInput {
+  display: none; 
+}
+
+.custom-file-input {
+  width: 60px; 
+  height: 50px; 
+  background: url('icon_upload.png') no-repeat center center; 
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  #canvas {
+    transform: scale(1.5) translateY(-15%); 
+    transform-origin: center;
+  }
+
+  .chatbox {
+      width: 100%;
+      padding: 5px;
+  }
+
+  .live2d-container {
+      width: 100%;
+      padding: 5px;
+  }
+
+  #live2d-container {
+    width: 100%;
+    height: 50vh;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #canvas_container {
+    width: 80%; 
+    height: 100%;
+  }
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+  }
+
+  .message-list {
+    height: 90%; 
+  }
+  
+  .message-input {
+    padding: 5px 0;
+  }
+
+  .message-input button {
+    padding: 10px 20px;
+  }
+
+  .message-input input, .message-input button {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .message-item {
+    padding: 10px;
+    border-radius: 0.75rem;
+    margin: 10px 0;
+  }
+
+  #calendar {
+    font-size: 8px;
+    bottom: 0px; 
+  }  
+}
